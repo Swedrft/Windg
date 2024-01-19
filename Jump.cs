@@ -9,7 +9,8 @@ public class Jump : MonoBehaviour
     public float DirR;
     public float DirL;
     public float back;
-    
+    private const walkspeed = 5.0f;
+    private const sprintspeed = 10.4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class Jump : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.W)){
-            GetComponent<Rigidbody>().velocity = Vector3.up * jumpforce;
+            GetComponent<Rigidbody>().velocity = Vector3.forward * move;
         
         }
         if(Input.GetKeyDown(KeyCode.S)){
